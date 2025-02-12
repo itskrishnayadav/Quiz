@@ -3,3 +3,12 @@
     text-align: center;
     background: #f4f4f4;
 }
+
+.quiz-container{
+    width: 50%;
+    margin :auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(red, green, blue, alpha);
+    border-radius: 10px;
+}
