@@ -7,6 +7,16 @@ class Quiz {
     getCurrentQuestion(){
         return this.question [this.CurrentQuestionIndex];
     }
+  checkAnswer(selectedOption) {
+        if (selectedOption === this.getCurrentQuestion().correctAnswer) {
+            this.score++;
+        }
+        this.currentQuestionIndex++;
+    }
+
+    isQuizover(){
+        return this.currentQuestionIndex >= this.question.length;
+    }
 }
 /*
 class Quiz { 1. this define a class called quiz
@@ -26,6 +36,25 @@ this.question = question; ( 1. this.question stores the question parameter insid
                               ];
                               )
     
+this.CurrentQuestionIndex = 0; ( 1. this tracks which question the quiz is currently on.
+                                 2. It starts at 0, meaning the first question in the question array.
+                                 3. Each time a user answer, CurrentQuestionIndex will increase to move to the question.)
 
+this.score = 0; (1. the score variable tracks the number of correct answer increases the score
+                 2. it satrts at 0, and each correct answer increase the score.)
+
+getcurrentquestion() { 1.This method (function inside the class) returns the current question object from the quiz.}
+
+return this.question [this.CurrentQuestionIndex]; {1. the retrives the current question object from the question array using this.CurrentQuestionIndex.
+
+Example:
+
+const quiz = new quiz(question);
+console.log(quiz.getCurrentQuestion());
+
+if CurrentQuestionIndex = 0, it returns
+{ question : "what is 5+5?", answer = "10"};
+ 
+}
 
  */
