@@ -1,11 +1,11 @@
 class Quiz {
     constructor(question){
         this.question = question;
-        this.CurrentQuestionIndex = 0;
+        this.currentQuestionIndex = 0;
         this.score = 0;
     }
     getCurrentQuestion(){
-        return this.question [this.CurrentQuestionIndex];
+        return this.question [this.currentQuestionIndex];
     }
   checkAnswer(selectedOption) {
         if (selectedOption === this.getCurrentQuestion().correctAnswer) {
@@ -36,14 +36,14 @@ this.question = question; ( 1. this.question stores the question parameter insid
                               ];
                               )
     
-this.CurrentQuestionIndex = 0; ( 1. this tracks which question the quiz is currently on.
+this.currentQuestionIndex = 0; ( 1. this tracks which question the quiz is currently on.
                                  2. It starts at 0, meaning the first question in the question array.
                                  3. Each time a user answer, CurrentQuestionIndex will increase to move to the question.)
 
 this.score = 0; (1. the score variable tracks the number of correct answer increases the score
                  2. it satrts at 0, and each correct answer increase the score.)
 
-getcurrentquestion() { 1.This method (function inside the class) returns the current question object from the quiz.}
+getCurrentQuestion() { 1.This method (function inside the class) returns the current question object from the quiz.}
 
 return this.question [this.CurrentQuestionIndex]; {1. the retrives the current question object from the question array using this.CurrentQuestionIndex.
 
@@ -56,5 +56,26 @@ if CurrentQuestionIndex = 0, it returns
 { question : "what is 5+5?", answer = "10"};
  
 }
+
+checkAnswer(selectedOption) {1. Method Declertion : this function is a method of the Quiz class.
+                             2. selectedOption is the user's selected answer}
+
+if (selectedOption === this.getCurrentQuestion().correctAnswer){
+this.score++
+} 
+(1.this.getCurrentQuestion() returns the current object
+ 2..correctAnswer accesses the correct answer of the current question.
+ 3.if the selected answer is correct, the score (this.score) is incresed by 1.)
+
+ this.CurrentQuestionIndex++; (1.Moves to the next question by incrementing currentQuestionIndex.
+                               2.if there are 5 questions, currentQuestionIndex will go from 0...1...2...3...4...5.)
+
+isQuizover(){1.Method declertion : this is a part of the quiz class.}
+
+return this.currentQuestionIndex >= this.question.length; (1.this.currentQuestionIndex : tracks which question is currently being answered.
+ 2.this.question.length : total number of question
+ 3.if currentQuestionIndex is greter than or equal to question.length, the quiz is over.
+ 4.returns true if the quiz is over,false otherwise.)
+ 
 
  */
